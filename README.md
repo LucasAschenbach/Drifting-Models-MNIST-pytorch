@@ -43,7 +43,7 @@ To train the model, run the following command:
 python main.py train --epochs 100 --batch-size 512 --lr 1e-3
 ```
 
-Training stats are logged via tensorboard and can be visualized by running the following command:
+Training took ~45 min on a 16GB M1-Pro MacBook. Stats are logged via tensorboard and can be visualized by running the following command:
 
 ```bash
 tensorboard --logdir runs
