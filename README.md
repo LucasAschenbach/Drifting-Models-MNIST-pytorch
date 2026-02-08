@@ -1,11 +1,11 @@
-# Learning MNIST with Drifting Models
+# Learning MNIST via Drifting Models
 
 <p align="center">
   <img src="assets/drift-pointcloud.gif" width="45%" />
   <img src="assets/drift-mnist.gif" width="45%" />
 </p>
 
-This is a very basic implementation of Drifting Models, following the paper [Generative Modeling via Drifting](https://arxiv.org/pdf/2602.04770), on the example of the MNIST dataset.
+This is a very basic implementation of Drifting Models, following the paper [Generative Modeling via Drifting](https://arxiv.org/pdf/2602.04770), demonstrated on the MNIST dataset.
 
 > **TL;DR:** Drifting Models evolve the pushforward distribution $q_\theta \sim f_\theta(X), X \sim N(0, 1)$ of a model by repeatedly applying an anti-symmetric forcing field $V_{q,p}$ to it which *drifts* the distribution towards the data distribution $p$ that we want to learn. We solve the fix-point problem
 > 
