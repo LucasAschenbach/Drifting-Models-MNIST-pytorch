@@ -9,7 +9,7 @@ This is a very basic implementation of Drifting Models, following the paper [Gen
 
 > **TL;DR:** Drifting Models evolve the pushforward distribution $q_\theta \sim f_\theta(X), X \sim N(0, 1)$ of a model by repeatedly applying an anti-symmetric forcing field $V_{q,p}$ to it which *drifts* the distribution towards the data distribution $p$ that we want to learn. We solve the fix-point problem
 > 
-> $$f_\theta(X) =_d f_\theta(X) - V(f_\theta(X))$$
+> $$f_\theta(X) =_d f_\theta(X) + V(f_\theta(X))$$
 > 
 > by minimizing
 > 
