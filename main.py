@@ -16,10 +16,12 @@ if __name__ == "__main__":
   train_parser.add_argument("--lr", type=float, default=1e-3, help="Learning rate for the optimizer")
   train_parser.add_argument("--batch_size", type=int, default=128, help="Batch size for training and validation")
   train_parser.add_argument("--T", type=float, default=1.0, help="Temperature for Softmax transport")
+  train_parser.add_argument("--model_type", type=str, default="UNet", choices=["ModelV1", "UNet"], help="Model architecture to use")
 
   sample_parser = subparsers.add_parser("sample", help="Sample images from a model")
   sample_parser.add_argument("--device", type=str, default="mps", help="Device to use for sampling (e.g., 'cpu', 'cuda', 'mps')")
   sample_parser.add_argument("--model_path", type=str, help="Path to saved model weights")
+  sample_parser.add_argument("--model_type", type=str, default="UNet", choices=["ModelV1", "UNet"], help="Model architecture to use")
   sample_parser.add_argument("--batch_size", type=int, default=64, help="Number of samples to generate")
 
   args = parser.parse_args()

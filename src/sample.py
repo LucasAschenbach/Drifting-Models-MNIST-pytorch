@@ -2,7 +2,7 @@ import torch
 import torchvision
 import matplotlib.pyplot as plt
 
-from .model import ModelV1
+from .model import make_model
 from .utils import get_device
 
 
@@ -11,7 +11,8 @@ def sample(args):
 
   model_state_dict = torch.load(args.model_path, map_location=device)
 
-  model = ModelV1(channels=1).to(device)
+  model = make_model(args.model_type, channels=1).to(device)
+
   model.load_state_dict(model_state_dict)
   model.eval()
 

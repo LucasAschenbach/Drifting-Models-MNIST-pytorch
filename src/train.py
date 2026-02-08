@@ -7,7 +7,7 @@ import torchvision
 import torchvision.transforms as transforms
 from torch.utils.tensorboard import SummaryWriter
 
-from .model import ModelV1
+from .model import make_model
 from .utils import get_device, save_config
 
 
@@ -72,7 +72,8 @@ def train(args):
   train_loader = torch.utils.data.DataLoader(train_dataset, batch_size=args.batch_size, shuffle=True, drop_last=True)
   val_loader = torch.utils.data.DataLoader(val_dataset, batch_size=args.batch_size, shuffle=False, drop_last=True)
 
-  model = ModelV1(channels=1).to(device)
+  model = make_model(args.model_type, channels=1).to(device)
+
   optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 
   global_step = 0
