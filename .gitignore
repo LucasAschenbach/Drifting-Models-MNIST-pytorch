@@ -1,0 +1,11 @@
+# System
+.DS_Store
+
+# Python
+.venv/
+__pycache__/
+
+# Data
+data/
+output/
+runs/
